@@ -62,6 +62,24 @@ function visibility(){
     // ESERCIZIO 12: Scrivi una funzione per cambiare il colore del prezzo di ogni prodotto in uno differente, 
     //ogni volta che viene invocata
 
+    function differentColor() {
+        //Dichiariamo una variabile e le diamo il valore degli selezionati dal foglio HTML
+        const price = document.querySelectorAll(".price");
 
+        //Usiamo un ciclo per poter applicare le modifiche ad ogni elemento con classe .price
+        for (let i = 0; i < price.length; i++) {
+
+            //Dichiariamo tre variabili di rgb e quindi red green e blue e randomizziamo colori per ognuna
+            const red = Math.round(Math.random() * 255);
+            const green = Math.round(Math.random() * 255);
+            const blue = Math.round(Math.random() * 255);
+
+            //Tramite .style e .color applichiamo le modifiche di colore randomico ad ogni refresh della pagina web
+            price[i].style.color = `rgb(${red}, ${green}, ${blue})`;
+        }
+    }
+    
+    differentColor();
+    
 
 
