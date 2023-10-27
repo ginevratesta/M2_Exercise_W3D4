@@ -1,47 +1,67 @@
-// Il tuo compito è creare un sito e-commerce per Smartphones. 
-// L'homepage che stai per creare sarà la vetrina dei prodotti disponibili, con qualche informazione per ciascun prodotto. 
-// Non sono richieste funzionalità di carrello/cassa.
-// - Completa gli esercizi dall'1 al 6 SOLAMENTE con HTML
-// - Completa gli altri esercizi con JS
-
-//ESERCIZI IN HTML
-// ESERCIZIO 1: Inserisci un tag h1 con il nome del tuo negozio
-// ESERCIZIO 2: Aggiungi una tabella con i 5 prodotti più in vista del tuo negozio
-// ESERCIZIO 3: Aggiungi per ogni prodotto un'immagine, un titolo, una descrizione e un prezzo
-// ESERCIZIO 4: Per ogni elemento della tabella aggiungi un link di Amazon al prodotto esistente
-// ESERCIZIO 5: Aggiungi un footer con il nome e l'indirizzo del tuo negozio
-// ESERCIZIO 6: Aggiungi un campo testuale in cui l'utente può lasciare un commento su un prodotto (al momento non serve inserire nessuna "vera" funzionalità di POST/salvataggio!)
-
 //ESERCIZI IN JS
 // ESERCIZIO 7: Scrivi una funzione per cambiare il contenuto del tag h1 in qualcos'altro
-// ESERCIZIO 8: Scrivi una funzione per cambiare il colore di background della pagina
-// ESERCIZIO 9: Scrivi una funzione per cambiare l'indirizzo presente nel footer in un altro, fittizio
-// ESERCIZIO 10: Scrivi una funzione per aggiungere una classe CSS ad ogni link Amazon della tabella
-// ESERCIZIO 11: Scrivi una funzione per aggiungere/togliere una classe CSS a tutte le immagini della tabella; questa classe deve modificare la visibilità/invisibilità dell'immagine
-// ESERCIZIO 12: Scrivi una funzione per cambiare il colore del prezzo di ogni prodotto in uno differente, ogni volta che viene invocata
-
 
 function newTitle() {
+    //Dichiariamo una variabile e le diamo il valore dell'elemento selezionato dal foglio HTML
     const h1 = document.querySelector("h1");
-      h1.innerText = "WOW SMARTPHONE!"; 
-    }
-  
+    //Cambiano il testo 
+    h1.innerText = "WOW SMARTPHONE!"; 
+}
+
 newTitle()
 
- function backgroundColor(){
-    const body = document.querySelector("body");
-    body.style.backgroundColor = "lightblue"
- }
 
- backgroundColor()
- 
- 
- function anchorLink() {
-    // Selezioniamo l'elemento <a> all'interno dell'elemento con classe "spacing"
-    const link = document.querySelector(".spacing a");
-  
-    // Modifichiamo l'URL del link
-    link.href = "https://www.lellikelly.it/";
-  }
-  
-  anchorLink();
+// ESERCIZIO 8: Scrivi una funzione per cambiare il colore di background della pagina
+
+function backgroundColor(){
+    //Dichiariamo una variabile e le diamo il valore dell'elemento selezionato dal foglio HTML
+    const body = document.querySelector("body");
+    //Applichiamo la modifica al colore del background usando .style
+    body.style.backgroundColor = "lightblue"
+}
+
+backgroundColor()
+
+
+// ESERCIZIO 9: Scrivi una funzione per cambiare l'indirizzo presente nel footer in un altro, fittizio
+// ESERCIZIO 10: Scrivi una funzione per aggiungere una classe CSS ad ogni link Amazon della tabella
+
+function anchorLink() {
+    //Dichiariamo una variabile e le diamo il valore degli selezionati dal foglio HTML
+    const links = document.querySelectorAll(".spacing a");
+    
+    //Usiamo un ciclo per poter applicare le modifiche ad ogni elemento "a" di .spacing
+    for (let i = 0; i < links.length; i++) {
+        
+        // Trattandosi di un tag ancora dobbiamo modificare direttamente il link che contiene e perciò utilizzeremo .href
+        links[i].href = "https://www.lellikelly.it/";
+        //Uniamo due esercizi in uno evitando ripetizioni ed aggiungiamo una classe ad ogni tag ancora
+        links[i].classList.add("tag-ancora");
+    }
+}
+
+anchorLink();
+
+// ESERCIZIO 11: Scrivi una funzione per aggiungere/togliere una classe CSS a tutte le immagini della tabella; questa classe deve modificare la visibilità/invisibilità dell'immagine
+
+function visibility(){
+    //Dichiariamo una variabile e le diamo il valore degli selezionati dal foglio HTML
+    const img = document.querySelectorAll(".pic-size")
+        
+        //Usiamo un ciclo per poter applicare le modifiche ad ogni elemento "a" di .spacing
+        for(let i = 0; i < img.length; i++){
+
+            //Applichiamo la modifica sulla visibilità usando .stile e .visibility
+            img[i].style.visibility = "visible";
+        }
+    }
+
+    visibility()
+
+
+    // ESERCIZIO 12: Scrivi una funzione per cambiare il colore del prezzo di ogni prodotto in uno differente, 
+    //ogni volta che viene invocata
+
+
+
+
