@@ -67,7 +67,7 @@ function isImagesVisible(visible){
     // ESERCIZIO 12: Scrivi una funzione per cambiare il colore del prezzo di ogni prodotto in uno differente, 
     //ogni volta che viene invocata
 
-    function differentColor() {
+    function setRandomColor() {
         //Dichiariamo una variabile e le diamo il valore degli selezionati dal foglio HTML
         const price = document.querySelectorAll(".price");
 
@@ -84,7 +84,7 @@ function isImagesVisible(visible){
         }
     }
     
-    differentColor();
+    setRandomColor();
     
 
 
