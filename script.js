@@ -1,68 +1,67 @@
 //ESERCIZI IN JS
 // ESERCIZIO 7: Scrivi una funzione per cambiare il contenuto del tag h1 in qualcos'altro
 
-function newTitle() {
+function setNewTitle(newTitle) {
     //Dichiariamo una variabile e le diamo il valore dell'elemento selezionato dal foglio HTML
     const h1 = document.querySelector("h1");
     //Cambiano il testo 
-    h1.innerText = "WOW SMARTPHONE!"; 
+    h1.innerText = newTitle; 
 }
 
-newTitle()
+setNewTitle("WOW SMARTPHONE!")
 
 
 // ESERCIZIO 8: Scrivi una funzione per cambiare il colore di background della pagina
 
-function backgroundColor(){
+function setBackgroundColor(backgroundColor){
     //Dichiariamo una variabile e le diamo il valore dell'elemento selezionato dal foglio HTML
     const body = document.querySelector("body");
     //Applichiamo la modifica al colore del background usando .style
-    body.style.backgroundColor = "lightblue"
+    body.style.backgroundColor =  backgroundColor;
 }
 
-backgroundColor()
+setBackgroundColor("lightblue");
 
 
 // ESERCIZIO 9: Scrivi una funzione per cambiare l'indirizzo presente nel footer in un altro, fittizio
-function newLink(){
-    const newLink = document.querySelector("footer a");
+
+function setNewLink(newLink){
+    const anchorInsideFooter = document.querySelector("footer a");
     
-    newLink.href = "https://www.lellikelly.it/"
+    anchorInsideFooter.href = newLink
 }
 
-newLink()
-
+setNewLink("https://www.lellikelly.it/")
 
 // ESERCIZIO 10: Scrivi una funzione per aggiungere una classe CSS ad ogni link Amazon della tabella
 
-function anchorLink() {
+function setAnchorLinkClass(classToAdd) {
     //Dichiariamo una variabile e le diamo il valore degli selezionati dal foglio HTML
     const newClass = document.querySelectorAll(".spacing a");
     
     //Usiamo un ciclo per poter applicare le modifiche ad ogni elemento "a" di .spacing
     for (let i = 0; i < newClass.length; i++) {
         //Uniamo due esercizi in uno evitando ripetizioni ed aggiungiamo una classe ad ogni tag ancora
-        newClass[i].classList.add("tag-ancora");
+        newClass[i].classList.add(classToAdd);
     }
 }
 
-anchorLink();
+setAnchorLinkClass("tag-ancora");
 
-// ESERCIZIO 11: Scrivi una funzione per aggiungere/togliere una classe CSS a tutte le immagini della tabella; questa classe deve modificare la visibilità/invisibilità dell'immagine
+// ESERCIZIO 11: Scrivi una funzione per aggiungere/togliere una classe CSS a tutte le immagini della tabella;
+// questa classe deve modificare la visibilità/invisibilità dell'immagine
 
-function visibility(){
+function isImagesVisible(visible){
     //Dichiariamo una variabile e le diamo il valore degli selezionati dal foglio HTML
     const img = document.querySelectorAll(".pic-size")
         
         //Usiamo un ciclo per poter applicare le modifiche ad ogni elemento "a" di .spacing
         for(let i = 0; i < img.length; i++){
-
-            //Applichiamo la modifica sulla visibilità usando .stile e .visibility
-            img[i].style.visibility = "visible";
+            visible?img[i].classList.remove("imageIsNotVisible"):img[i].classList.add("imageIsNotVisible")
         }
     }
 
-    visibility()
+    isImagesVisible(true)
 
 
     // ESERCIZIO 12: Scrivi una funzione per cambiare il colore del prezzo di ogni prodotto in uno differente, 
