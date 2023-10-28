@@ -24,19 +24,25 @@ backgroundColor()
 
 
 // ESERCIZIO 9: Scrivi una funzione per cambiare l'indirizzo presente nel footer in un altro, fittizio
+function newLink(){
+    const newLink = document.querySelector("footer a");
+    
+    newLink.href = "https://www.lellikelly.it/"
+}
+
+newLink()
+
+
 // ESERCIZIO 10: Scrivi una funzione per aggiungere una classe CSS ad ogni link Amazon della tabella
 
 function anchorLink() {
     //Dichiariamo una variabile e le diamo il valore degli selezionati dal foglio HTML
-    const links = document.querySelectorAll(".spacing a");
+    const newClass = document.querySelectorAll(".spacing a");
     
     //Usiamo un ciclo per poter applicare le modifiche ad ogni elemento "a" di .spacing
-    for (let i = 0; i < links.length; i++) {
-        
-        // Trattandosi di un tag ancora dobbiamo modificare direttamente il link che contiene e perciò utilizzeremo .href
-        links[i].href = "https://www.lellikelly.it/";
+    for (let i = 0; i < newClass.length; i++) {
         //Uniamo due esercizi in uno evitando ripetizioni ed aggiungiamo una classe ad ogni tag ancora
-        links[i].classList.add("tag-ancora");
+        newClass[i].classList.add("tag-ancora");
     }
 }
 
