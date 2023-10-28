@@ -1,3 +1,18 @@
+// Il tuo compito è creare un sito e-commerce per Smartphones. 
+// L'homepage che stai per creare sarà la vetrina dei prodotti disponibili, con qualche informazione per ciascun prodotto. 
+// Non sono richieste funzionalità di carrello/cassa.
+// - Completa gli esercizi dall'1 al 6 SOLAMENTE con HTML
+// - Completa gli altri esercizi con JS
+
+//ESERCIZI IN HTML
+
+// ESERCIZIO 1: Inserisci un tag h1 con il nome del tuo negozio
+// ESERCIZIO 2: Aggiungi una tabella con i 5 prodotti più in vista del tuo negozio
+// ESERCIZIO 3: Aggiungi per ogni prodotto un'immagine, un titolo, una descrizione e un prezzo
+// ESERCIZIO 4: Per ogni elemento della tabella aggiungi un link di Amazon al prodotto esistente
+// ESERCIZIO 5: Aggiungi un footer con il nome e l'indirizzo del tuo negozio
+// ESERCIZIO 6: Aggiungi un campo testuale in cui l'utente può lasciare un commento su un prodotto (al momento non serve inserire nessuna "vera" funzionalità di POST/salvataggio!)
+
 //ESERCIZI IN JS
 // ESERCIZIO 7: Scrivi una funzione per cambiare il contenuto del tag h1 in qualcos'altro
 
@@ -25,15 +40,15 @@ setBackgroundColor("lightblue");
 
 // ESERCIZIO 9: Scrivi una funzione per cambiare l'indirizzo presente nel footer in un altro, fittizio
 
-function setNewLink(newLink) {
+function setNewAddress(newAddress) {
   //Dichiariamo una variabile e le diamo il valore dell'elemento selezionato dal foglio HTML
-  const anchorInsideFooter = document.querySelector("footer a");
-
-  //Cambiamo il link di riferimento con .href
-  anchorInsideFooter.href = newLink;
+  const address = document.querySelector("footer span");
+  
+  //Cambiamo l'indirizzo di riferimento con .innerText
+  address.innerText = newAddress
 }
 
-setNewLink("https://www.lellikelly.it/");
+setNewAddress("in Via SoloDaNoi, 32, ME");
 
 // ESERCIZIO 10: Scrivi una funzione per aggiungere una classe CSS ad ogni link Amazon della tabella
 
