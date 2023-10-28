@@ -2,9 +2,11 @@
 // ESERCIZIO 7: Scrivi una funzione per cambiare il contenuto del tag h1 in qualcos'altro
 
 function setNewTitle(newTitle) {
+    
     //Dichiariamo una variabile e le diamo il valore dell'elemento selezionato dal foglio HTML
     const h1 = document.querySelector("h1");
-    //Cambiano il testo 
+    
+    //Cambiamo il testo con .innerText
     h1.innerText = newTitle; 
 }
 
@@ -14,9 +16,11 @@ setNewTitle("WOW SMARTPHONE!")
 // ESERCIZIO 8: Scrivi una funzione per cambiare il colore di background della pagina
 
 function setBackgroundColor(backgroundColor){
+    
     //Dichiariamo una variabile e le diamo il valore dell'elemento selezionato dal foglio HTML
     const body = document.querySelector("body");
-    //Applichiamo la modifica al colore del background usando .style
+    
+    //Applichiamo la modifica al colore del background usando .style e .backgroundColor
     body.style.backgroundColor =  backgroundColor;
 }
 
@@ -26,8 +30,11 @@ setBackgroundColor("lightblue");
 // ESERCIZIO 9: Scrivi una funzione per cambiare l'indirizzo presente nel footer in un altro, fittizio
 
 function setNewLink(newLink){
-    const anchorInsideFooter = document.querySelector("footer a");
     
+    //Dichiariamo una variabile e le diamo il valore dell'elemento selezionato dal foglio HTML
+    const anchorInsideFooter = document.querySelector("footer a");
+   
+    //Cambiamo il link di riferimento con .href
     anchorInsideFooter.href = newLink
 }
 
@@ -36,12 +43,14 @@ setNewLink("https://www.lellikelly.it/")
 // ESERCIZIO 10: Scrivi una funzione per aggiungere una classe CSS ad ogni link Amazon della tabella
 
 function setAnchorLinkClass(classToAdd) {
-    //Dichiariamo una variabile e le diamo il valore degli selezionati dal foglio HTML
+    
+    //Dichiariamo una variabile e le diamo il valore degli elementi selezionati dal foglio HTML
     const newClass = document.querySelectorAll(".spacing a");
     
     //Usiamo un ciclo per poter applicare le modifiche ad ogni elemento "a" di .spacing
     for (let i = 0; i < newClass.length; i++) {
-        //Uniamo due esercizi in uno evitando ripetizioni ed aggiungiamo una classe ad ogni tag ancora
+        
+        //Aggiungiamo una nuova classe usando .classList.add
         newClass[i].classList.add(classToAdd);
     }
 }
@@ -52,12 +61,16 @@ setAnchorLinkClass("tag-ancora");
 // questa classe deve modificare la visibilità/invisibilità dell'immagine
 
 function isImagesVisible(visible){
+    
     //Dichiariamo una variabile e le diamo il valore degli selezionati dal foglio HTML
     const img = document.querySelectorAll(".pic-size")
         
-        //Usiamo un ciclo per poter applicare le modifiche ad ogni elemento "a" di .spacing
+        //Usiamo un ciclo per poter applicare le modifiche ad ogni elemento con classe .pic-size
         for(let i = 0; i < img.length; i++){
-            visible?img[i].classList.remove("imageIsNotVisible"):img[i].classList.add("imageIsNotVisible")
+
+            //tramite un operatore ternario e l'ausilio di un booleano definiamo se aggiungere o meno la classe
+            //.imageIsNotVisible 
+            visible?img[i].classList.remove(".imageIsNotVisible"):img[i].classList.add(".imageIsNotVisible")
         }
     }
 
@@ -68,6 +81,7 @@ function isImagesVisible(visible){
     //ogni volta che viene invocata
 
     function setRandomColor() {
+        
         //Dichiariamo una variabile e le diamo il valore degli selezionati dal foglio HTML
         const price = document.querySelectorAll(".price");
 
